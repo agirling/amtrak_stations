@@ -1,32 +1,32 @@
-# Amtrak
+# Amtrak Stations
 
-[![Gem Version](https://badge.fury.io/rb/amtrak.svg)](http://badge.fury.io/rb/amtrak)
+[![Gem Version](https://badge.fury.io/rb/amtrak_stations.svg)](http://badge.fury.io/rb/amtrak_stations)
 
-Amtrak lets you access to data on Amtrak train stations.
+Provides geographical and timezone data on Amtrak stations.
 
-It's based on data from the [Federal Railroad Administration](http://osav-usdot.opendata.arcgis.com/datasets/3e9daf681b154fb19372044f4d52941a_0), with time zone information added.
+Date is from the [Federal Railroad Administration](http://osav-usdot.opendata.arcgis.com/datasets/3e9daf681b154fb19372044f4d52941a_0), with time zone information added.
 
 ## Usage
 
 Install the gem by adding it to your Gemfile:
 
 ```ruby
-gem 'amtrak', '~> 1.0.0'
+gem 'amtrak_stations', '~> 1.0.0'
 ```
 
 You can then look up a station by its station code (e.g. `BFX` for Buffalo (Exchange Street), New York using `Amtrak.find_by_station_code`, which returns an object with a bunch of accessors like `name` and `city`:
 
 ```ruby
-Amtrak.find_by_station_code("BFX")
-=> #<Amtrak::Station:0x007fd9a1bbd550 @name="Buffalo (Exchange Street), New York", @city="Buffalo", @state="New York", @code="BFX", @latitude="-78.8737", @longitude="42.878545", @timezone="0", @dst="E">
+AmtrakStations.find_by_station_code("BFX")
+=> #<AmtrakStations::Station:0x00000000035c7990 @city="Buffalo-Depew", @latitude="42.907017000270038", @longitude="-78.726584000234652", @name="Buffalo (Depew), New York", @state="NY", @station_code="BUF", @timezone="-5">
 ```
 
 A couple of other methods provide access to aggregate data.
 
-You can call `Amtrak.station_codes` for a list of valid IATA codes, perfect for Rails validations:
+You can call `AmtrakStations.station_codes` for a list of valid IATA codes, perfect for Rails validations:
 
 ```ruby
-validates :destination_station, inclusion: { in: Amtrak.station_codes, message: "is not a valid station" }
+validates :destination_station, inclusion: { in: AmtrakStations.station_codes, message: "is not a valid station" }
 ```
 
 Or `Amtrak.all` will provide `Amtrak::Station` objects representing all the stations the gem knows about.
@@ -39,9 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-To update the data included in the gem, just run `bundle exec rake update` and make a pull request with the changes. This will pull the latest data from [OpenFlights](http://openflights.org).
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/agirling/amtrak. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/agirling/amtrak_stations. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 ## Acknowledgements
 

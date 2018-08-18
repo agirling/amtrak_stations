@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    amtrak (1.0.0)
+    amtrak_stations (1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -35,7 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  amtrak!
+  amtrak_stations!
   pry (~> 0.11.3)
   rake (~> 10.0)
   rspec (~> 3.8.0)

@@ -1,16 +1,16 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "amtrak/version"
+require "amtrak_stations/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "amtrak"
-  spec.version = Amtrak::VERSION
+  spec.name = "amtrak_stations"
+  spec.version = AmtrakStations::VERSION
   spec.authors = ["Andrew Girling"]
   spec.email = ["agirling@bavservices.com"]
 
-  spec.summary = "Access data on Amtrak stations"
-  spec.description = "Access data on Amtrak stations"
-  spec.homepage = "https://github.com/agirling/amtrak"
+  spec.summary = "Provides geographical and timezone data on Amtrak stations"
+  spec.description = "Provides geographical and timezone data on Amtrak stations"
+  spec.homepage = "https://github.com/agirling/amtrak_stations"
   spec.license = "MIT"
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|

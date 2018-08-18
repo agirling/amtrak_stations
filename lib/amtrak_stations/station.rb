@@ -1,4 +1,4 @@
-module Amtrak
+module AmtrakStations
   class Station
     attr_reader :name, :city, :state, :station_code,
       :latitude, :longitude, :timezone

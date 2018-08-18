@@ -1,8 +1,8 @@
 require "spec_helper"
 
-RSpec.describe Amtrak do
+RSpec.describe AmtrakStations do
   it "has a version number" do
-    expect(Amtrak::VERSION).to_not be nil
+    expect(AmtrakStations::VERSION).to_not be nil
   end
 
   describe ".find_by_station_code" do
@@ -13,7 +13,7 @@ RSpec.describe Amtrak do
     context "with a valid station code" do
       let(:station_code) { "BUF" }
 
-      it { is_expected.to be_a(Amtrak::Station) }
+      it { is_expected.to be_a(AmtrakStations::Station) }
       its(:name) { is_expected.to eq("Buffalo (Depew), New York") }
     end
 
@@ -44,6 +44,6 @@ RSpec.describe Amtrak do
     subject { described_class.all }
 
     it { is_expected.to be_a(Array) }
-    its(:first) { is_expected.to be_a(Amtrak::Station) }
+    its(:first) { is_expected.to be_a(AmtrakStations::Station) }
   end
 end

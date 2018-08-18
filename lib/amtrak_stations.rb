@@ -1,8 +1,8 @@
 require "json"
-require "amtrak/version"
-require "amtrak/station"
+require "amtrak_stations/version"
+require "amtrak_stations/station"
 
-module Amtrak
+module AmtrakStations
   def self.find_by_station_code(station_code)
     return unless station_code.length == 3
     station_data = parsed_data.fetch(station_code, nil)
